@@ -1,8 +1,8 @@
 public class Lesson_010_Objects_and_classes {
     public static void main(String[] args) {
 
-        Book book = new Book("'Остров сокровищ'", "Приключения", "Роберт Льюис Бэлфур Стивенсон", 1881);
-        Book book2 = new Book("'Омон Ра'", "Фантастика", "Виктор Олегович Пелевин", 1991);
+        Book book = new Book("'Остров сокровищ'", "Приключения"," ",1881);
+        Book book2 = new Book("'Омон Ра'", "Фантастика"," ",1991);
 
         book.setPublicationYear(1883);
 
