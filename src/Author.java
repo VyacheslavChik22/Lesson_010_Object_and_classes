@@ -12,19 +12,17 @@ public class Author {
     }
 
 
-    public String getName() {
+    public String getName(){
         return this.name;
     }
-
-    public String getLastName() {
+    public String getLastName(){
         return this.lastName;
     }
-
-    public int getDateOfBirth() {
+    public int getDateOfBirth(){
         return this.dateOfBirth;
     }
-
-    public String getPlaceOfBirth() {
+    public String getPlaceOfBirth(){
         return this.placeOfBirth;
     }
+
 }
