@@ -32,24 +32,20 @@ public class Author {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        } else {
-            Author authorNext = (Author) other;
-            return lastName.equals(authorNext.lastName);
-        }
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        Author author = (Author) other;
+        return Objects.equals(name, author.name) && Objects.equals(lastName, author.lastName) && Objects.equals(placeOfBirth, author.placeOfBirth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastName);
+        return Objects.hash(name, lastName, placeOfBirth);
     }
-
 
     @Override
     public String toString() {
-        return "Писатель: " + name + " " + lastName + ". Родился в " + dateOfBirth + " году, в городе " + placeOfBirth + ".";
+        return "Writer: " + name + " " + lastName + ". Was born in " + dateOfBirth + " year, in the town " + placeOfBirth + ".";
     }
-
 }
 

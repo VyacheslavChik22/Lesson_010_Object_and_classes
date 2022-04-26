@@ -36,23 +36,20 @@ public class Book {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        } else {
-            Book bookNext = (Book) other;
-            return bookTitle.equals(bookNext.bookTitle);
-        }
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        Book book = (Book) other;
+        return Objects.equals(bookTitle, book.bookTitle) && Objects.equals(genre, book.genre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookTitle);
+        return Objects.hash(bookTitle, genre);
     }
 
     @Override
     public String toString() {
-        return "Роман: " + bookTitle + " Жанр: " + genre + ". Автор: " + author.getName() + " " + author.getLastName() + "." +
-                " Год издания романа: " + publicationYear;
+        return "Novel: " + bookTitle + " Genre: " + genre + ". Author: " + author.getName() + " " + author.getLastName() + "." +
+                " The year of publication of the novel: " + publicationYear;
     }
-
 }
