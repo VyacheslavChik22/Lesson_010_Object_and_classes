@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Lesson_010_Objects_and_classes {
     public static void main(String[] args) {
 
@@ -10,20 +12,31 @@ public class Lesson_010_Objects_and_classes {
         book.setPublicationYear(1883);
 
 
+        System.out.println("\n" + book);
+        System.out.println(author);
+        System.out.println("\n" + book2);
+        System.out.println(author2);
 
-        System.out.println();
-        System.out.println("Роман: " + book.getBookTitle() + "; Жанр: " + book.getGenre() + "; Год издания романа: "
-                + book.getPublicationYear() + ". Автор: " + book.getAuthor().getName() + " " + book.getAuthor().getLastName() +
-                ". ");
-        System.out.println("Писатель и поэт: " + author.getName() + " " + author.getLastName() + ". Родился в "
-                + author.getDateOfBirth() + " году, в городе " + author.getPlaceOfBirth() + ".");
-        System.out.println();
 
-        System.out.println("Роман: " + book2.getBookTitle() + "; Жанр: " + book2.getGenre() + "; Год издания романа: "
-                + book2.getPublicationYear() +". Автор: "+ book2.getAuthor().getName()+ " " + book2.getAuthor().getLastName() + ". ");
+        System.out.println("\nСравнение в классе Book по названию произведения\n");
 
-        System.out.println("Русский писатель: " + author2.getName() + " " + author2.getLastName() + ". Родился в "
-                + author2.getDateOfBirth() + " году, в городе " + author2.getPlaceOfBirth() + ".");
+        Book bookNext = new Book("'Остров сокровищ'", "Приключения", author, 1881);
+        System.out.println(book.equals(bookNext));
+
+        System.out.println(Objects.hash(book));
+        System.out.println(Objects.hash(bookNext));
+
+        System.out.println("\nСравнение в классе Author по фамилии автора произведения\n");
+
+        Author authorNext = new Author("Виктор", "Пелевин", 1962, "Москва, СССР");
+        System.out.println(author2.equals(authorNext));
+
+        System.out.println(Objects.hash(author2));
+        System.out.println(Objects.hash(authorNext));
+
+
     }
 
 }
+
+

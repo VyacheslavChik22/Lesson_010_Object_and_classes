@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
 
     private String bookTitle;
@@ -19,6 +21,7 @@ public class Book {
     public String getGenre() {
         return this.genre;
     }
+
     public Author getAuthor() {
         return this.author;
     }
@@ -29,6 +32,27 @@ public class Book {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        } else {
+            Book bookNext = (Book) other;
+            return bookTitle.equals(bookNext.bookTitle);
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookTitle);
+    }
+
+    @Override
+    public String toString() {
+        return "Роман: " + bookTitle + " Жанр: " + genre + ". Автор: " + author.getName() + " " + author.getLastName() + "." +
+                " Год издания романа: " + publicationYear;
     }
 
 }
