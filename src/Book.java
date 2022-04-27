@@ -39,7 +39,7 @@ public class Book {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
         Book book = (Book) other;
-        return Objects.equals(bookTitle, book.bookTitle) && Objects.equals(genre, book.genre);
+        return Objects.equals(bookTitle, book.bookTitle) && Objects.equals(genre, book.genre) && Objects.equals(publicationYear, book.publicationYear) && Objects.equals(author, book.author);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Novel: " + bookTitle + " Genre: " + genre + ". Author: " + author.getName() + " " + author.getLastName() + "." +
+        return "Novel: " + bookTitle + " Genre: " + genre + ". Author: " + author.toString() + "." +
                 " The year of publication of the novel: " + publicationYear;
     }
 }
